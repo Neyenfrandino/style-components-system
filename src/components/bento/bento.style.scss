@@ -1,0 +1,52 @@
+.container {
+    display: grid;
+    height: 95vh;
+    width: 95%;
+    grid-template-columns: 1fr 1fr; /* La primera columna ocupa 1fr y la segunda 1fr */
+    grid-template-rows: repeat(3, 1fr);
+    /* border: solid 2px wheat; */
+    border-radius: 15px;
+    margin: 0 auto;
+  
+    .container__component {
+      display: block; /* Agrega display block */
+      grid-column: span 1;
+      grid-row: 2 / span 1;
+      width: 95%;
+      border: solid 1px wheat;
+      margin: 3%;
+      background-color: rgba(222, 223, 224, 0.5);
+      border-radius: 20px;
+      box-shadow: -2px -2px 5px 3px rgba(255, 255, 255, 0.8);
+      transition: 0.5s;
+  
+      &:hover {
+        transform: scale(0.99);
+        box-shadow: none; /* Cambiado para que el efecto de sombra se elimine completamente */
+      }
+  
+      .component {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90%; /* Asegura que el contenedor ocupe todo el alto disponible */
+        margin-bottom: -45px;
+      }
+  
+      .container__component__color-picker-section {
+        display: flex;
+        justify-content: center;
+      }
+  
+      .container__component__color-picker-section label {
+        margin-right: 10px; /* Espacio entre el label y el input */
+      }
+    }
+  
+    .container__component--large {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      margin: 3%;
+    }
+  }
+  
